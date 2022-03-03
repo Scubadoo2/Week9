@@ -98,7 +98,7 @@ bool write(const char board[][boardSize][boardSize], const char* fileName)
    for (int z = 0; z < boardSize; z++)
       for (int r = 0; r < boardSize; r++)
          for (int c = 0; c < boardSize; c++)
-            fout << board[z][r][c] << (c == 2 ? '\n' : ' ');
+            fout << board[z][r][c] << (c == (boardSize - 1) ? '\n' : ' ');
 
    // close it!
    fout.close();
@@ -133,7 +133,7 @@ void display(const char board[][boardSize][boardSize])
                cout << " " << board[d][r][c] << " ";
 
             // end with a | or a newline
-            cout << (c == 2 ? '\n' : '|');
+            cout << (c == (boardSize - 1) ? '\n' : '|');
          }
       }
       
